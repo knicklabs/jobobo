@@ -3,8 +3,6 @@
 <a href="/jobs/new">Create New Job</a>
 
 <%= if (jobs && len(jobs)) { %>
-    <p>No jobs</p>
-<% } else { %>
     <table>
         <thead>
         <th>Title</th>
@@ -27,4 +25,6 @@
         <% } %>
         </tbody>
     </table>
+<% } else { %>
+    <p>No jobs</p>
 <% } %>
