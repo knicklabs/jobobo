@@ -27,13 +27,11 @@ type Job struct {
 	CompanyTwitter string `json:"company_twitter" db:"company_twitter"`
 }
 
-// String is not required by pop and may be deleted
 func (j Job) String() string {
 	jj, _ := json.Marshal(j)
 	return string(jj)
 }
 
-// Jobs is not required by pop and may be deleted
 type Jobs []Job
 
 // String is not required by pop and may be deleted
