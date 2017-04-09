@@ -1,0 +1,30 @@
+<h1>Jobs</h1>
+
+<a href="/jobs/new">Create New Job</a>
+
+<%= if (jobs && len(jobs)) { %>
+    <p>No jobs</p>
+<% } else { %>
+    <table>
+        <thead>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Company Name</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <%= for (job) in jobs { %>
+        <tr>
+            <td><%= job.Title %></td>
+            <td><%= job.Description %></td>
+            <td><%= user.CompanyName %></td>
+            <td>
+                <a href="/jobs/<%= job.ID %>">View</a>
+                <a href="/jobs/<%= job.ID %>/edit">Edit</a>
+                <a href="/jobs/<%= job.ID %>" data-method="DELETE" data-confirm="Are you sure?">Destroy</a>
+            </td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+<% } %>
