@@ -22,7 +22,7 @@ func init() {
 		Helpers: render.Helpers{
 			"errClass": func(hasError bool) string {
 				if hasError {
-					return "has-error"
+					return "has-danger"
 				}
 				return ""
 			},
