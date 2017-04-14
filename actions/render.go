@@ -1,9 +1,6 @@
 package actions
 
 import (
-	"html/template"
-	"strings"
-
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/packr"
 )
