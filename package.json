@@ -1,26 +1,35 @@
 {
   "name": "jobobo",
-  "version": "1.0.0",
-  "description": "Thank you for choosing Buffalo for your web development needs.",
+  "version": "0.0.1",
+  "description": "Software Niagara Job Board",
   "main": "webpack.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": "git@github.com:knicklabs/jobobo.git",
+  "author": "nickolas@knicklabs.com <nickolas@knicklabs.com>",
+  "license": "MIT",
   "dependencies": {
+    "axios": "^0.16.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "font-awesome": "^4.7.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router": "3.0.2",
+    "react-router-redux": "4.0.8",
+    "redux": "^3.6.0",
+    "sprintf-js": "^1.0.3",
+    "tachyons": "^4.7.0"
+  },
+  "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
-    "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
-    "jquery-ujs": "^1.2.2",
     "node-sass": "^4.5.2",
     "npm-install-webpack-plugin": "^4.0.4",
     "path": "^0.12.7",
@@ -28,8 +37,5 @@
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3"
-  },
-  "devDependencies": {
-    "tachyons": "^4.7.0"
   }
 }
