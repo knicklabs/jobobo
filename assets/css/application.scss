@@ -56,7 +56,9 @@ html {
 }
 
 body {
-    background: linear-gradient(15deg, lighten($mediumPurple, 5%), $purple) fixed;
+    background-attachment: fixed;
+    background-color: $purple;
+    background-image: linear-gradient(10deg, rgba(lighten($mediumPurple, 10%), 0.9), rgba($purple, 0));
     color: white;
     font-family: "Roboto", sans-serif;
     min-height: 100%;
@@ -94,7 +96,7 @@ body {
 
 .site-nav {
     &--button {
-        @include outlineButton($lightPurple, $lightPurple);
+        @include outlineButton($green, $green);
     }
 
     &--home {
@@ -159,29 +161,13 @@ body {
 
     &--main {
         font-size: 1.5rem;
-        padding: 2.25rem 0 4.5rem 0;
+        padding: 2.25rem 0 3.25rem 0;
     }
 
     &--button {
-        background-color: $pink;
-        border-radius: 3px;
-        color: white;
-        display: inline-block;
+        @include button($pink, white);
         font-size: 1.5rem;
-        letter-spacing: 1.5px;
         margin-bottom: 1rem;
-        padding: 1rem 1.5rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
-
-        &:focus {
-            outline: thin dotted;
-        }
-
-        &:hover {
-            background-color: lighten($pink, 10%);
-        }
     }
 }
 
