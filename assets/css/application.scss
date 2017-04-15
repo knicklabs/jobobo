@@ -1,12 +1,247 @@
-@import "~tachyons/css/tachyons.css";
 @import "~font-awesome/css/font-awesome.css";
+@import "~reset-css/reset.css";
 
+$darkPurple: #1a1a2e;
 $purple: #2A3051;
+$mediumPurple: #3e3e73;
+$lightPurple: #AAB7C4;
+$lightBlue: #91E1F3;
+$green: #98E2B5;
+$pink: #F22C6E;
 
-.jobobo-header {
-    background-color: $purple;
+$transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
 
-    img {
-        max-height: 30px;
+@mixin button($backgroundColor, $fontColor) {
+    background-color: $backgroundColor;
+    border-radius: 3px;
+    color: $fontColor;
+    display: inline-block;
+    letter-spacing: 1.5px;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: $transition;
+
+    &:focus {
+        outline: thin dotted;
+    }
+
+    &:hover {
+        background-color: lighten($backgroundColor, 5%);
+    }
+}
+
+@mixin outlineButton($borderColor, $fontColor) {
+    background-color: transparent;
+    border-radius: 3px;
+    border: 2px solid $borderColor;
+    color: $fontColor;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: $transition;
+
+    &:focus {
+        outline: thin dotted;
+    }
+
+    &:hover {
+        border-color: lighten($borderColor, 5%);
+    }
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(15deg, lighten($mediumPurple, 5%), $purple) fixed;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    min-height: 100%;
+}
+
+.return-bar {
+    background-color: rgba($darkPurple, 0.5);
+    padding: .6125rem 1.25rem;
+
+    &--icon {
+        color: $lightBlue;
+    }
+
+    &--link {
+        color: #AAB7C4;
+        text-decoration: none;
+
+        &:focus {
+            outline: none;
+            text-decoration: underline;
+        }
+
+        &:hover {
+            color: lighten(#AAB7C4, 5%);
+        }
+    }
+}
+
+.site-header {
+    background-color: rgba($purple, 0.5);
+    border-bottom: 1px solid $mediumPurple;
+    color: white;
+    padding: 1.25rem;
+}
+
+.site-nav {
+    &--button {
+        @include outlineButton($lightPurple, $lightPurple);
+    }
+
+    &--home {
+        display: inline-block;
+
+        &:focus {
+            outline: thin dotted;
+            opacity: 0.75;
+        }
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+
+    &--logo {
+        height: 3.55rem;
+    }
+
+    &--menu {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.main--wrapper {
+    text-align: center;
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 60rem;
+    padding: 1.25rem;
+}
+
+.promo {
+    padding: 3rem 0;
+    text-align: center;
+
+    &--icon {
+        background: linear-gradient(15deg, $lightBlue, $green);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $lightBlue;
+        font-size: 12rem;
+        margin-bottom: 2.25rem;
+    }
+
+    &--title {
+        color: $lightPurple;
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.3;
+
+        strong {
+            color: white;
+            font-weight: 700;
+        }
+    }
+
+    &--main {
+        font-size: 1.5rem;
+        padding: 2.25rem 0 4.5rem 0;
+    }
+
+    &--button {
+        background-color: $pink;
+        border-radius: 3px;
+        color: white;
+        display: inline-block;
+        font-size: 1.5rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+
+        &:focus {
+            outline: thin dotted;
+        }
+
+        &:hover {
+            background-color: lighten($pink, 10%);
+        }
+    }
+}
+
+.current-listings {
+    padding: 3rem 0;
+    text-align: left;
+
+    &--title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.job-list {
+    text-align: left;
+}
+
+.job-teaser {
+    &--link {
+        align-items: center;
+        border-radius: 3px;
+        color: $lightPurple;
+        display: flex;
+        padding: 0.75rem 0.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        text-decoration: none;
+
+        &:focus {
+            outline: thin dotted;
+        }
+
+        &:hover {
+            background-color: rgba(lighten($purple, 5%), 0.5);
+            transition: background-color .1s 0s ease-in-out,color .1s 0s ease-in-out;
+        }
+    }
+
+    &--title,
+    &--subtitle {
+        display: inline-block;
+        font-size: 1.5rem;
+    }
+
+    &--title {
+        color: white;
+        display: inline-block;
+        font-weight: 700;
+        margin-right: 1rem;
+    }
+
+    &--subtitle {
+        text-decoration: underline;
+    }
+
+    &--date {
+        color: $green;
+        font-size: 1.5rem;
+        text-align: right;
     }
 }
